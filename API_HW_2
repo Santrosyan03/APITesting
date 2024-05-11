@@ -1,0 +1,33 @@
+{
+	"id": "f9e9d9e8-c72d-4cbf-ae51-ce9b6e97786a",
+	"name": "MyEnvironment",
+	"values": [
+		{
+			"key": "base_url",
+			"value": "https://iiif.harvardartmuseums.org",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "object",
+			"value": "object",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "collections",
+			"value": "collections\n",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "currentTimestamp",
+			"value": "",
+			"type": "any",
+			"enabled": true
+		}
+	],
+	"_postman_variable_scope": "environment",
+	"_postman_exported_at": "2024-05-11T20:38:04.161Z",
+	"_postman_exported_using": "Postman/10.23.8"
+}

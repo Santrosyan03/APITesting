@@ -1,0 +1,415 @@
+{
+	"info": {
+		"_postman_id": "9eb1b684-319a-4d76-a686-4597a153163c",
+		"name": "Homework",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "34865668"
+	},
+	"item": [
+		{
+			"name": "GetCollectionTop",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Check label text is correct\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData).to.have.property('label');\r",
+							"    pm.expect(jsonData.label).to.eql(\"Harvard Art Museums Collections\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Array 'collections' has exactly 1 item\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.items).to.be.an('collections');\r",
+							"    pm.expect(jsonData.items.length).to.eql(1);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Array 'members' has exactly 1 item\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.items).to.be.an('members');\r",
+							"    pm.expect(jsonData.items.length).to.eql(1);\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"let currentDate = new Date().toUTCString();\r",
+							"pm.request.headers.add({\r",
+							"    key: 'Date',\r",
+							"    value: currentDate\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/{{collections}}/top",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"{{collections}}",
+						"top"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetItem299843",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Check label text is correct\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData).to.have.property('label');\r",
+							"    pm.expect(jsonData.label).to.eql(\"Self-Portrait Dedicated to Paul Gauguin\");\r",
+							"});\r",
+							"\r",
+							"\r",
+							"pm.test(\"Check attribution text is correct\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData).to.have.property('attribution');\r",
+							"    pm.expect(jsonData.label).to.eql(\"Harvard Art Museums\");\r",
+							"});\r",
+							"\r",
+							"\r",
+							"pm.test(\"Array 'sequences' has exactly 1 item\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.items).to.be.an('sequences');\r",
+							"    pm.expect(jsonData.items.length).to.eql(1);\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"let currentDate = new Date().toUTCString();\r",
+							"pm.request.headers.add({\r",
+							"    key: 'Date',\r",
+							"    value: currentDate\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/{{manifests}}/{{object}}/299843",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"{{manifests}}",
+						"{{object}}",
+						"299843"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetItem299653",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Check label text is correct\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData).to.have.property('label');\r",
+							"    pm.expect(jsonData.label).to.eql(\"Study of an Oak Tree\");\r",
+							"});\r",
+							"\r",
+							"\r",
+							"pm.test(\"Check attribution text is correct\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData).to.have.property('attribution');\r",
+							"    pm.expect(jsonData.label).to.eql(\"Harvard Art Museums\");\r",
+							"});\r",
+							"\r",
+							"\r",
+							"pm.test(\"Array 'metadata' has exactly 8 items\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.items).to.be.an('metadata');\r",
+							"    pm.expect(jsonData.items.length).to.eql(8);\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"let currentDate = new Date().toUTCString();\r",
+							"pm.request.headers.add({\r",
+							"    key: 'Date',\r",
+							"    value: currentDate\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/{{manifests}}/{{object}}/299653",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"{{manifests}}",
+						"{{object}}",
+						"299653"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetItem300000",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Check label text is correct\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData).to.have.property('label');\r",
+							"    pm.expect(jsonData.label).to.eql(\"Cupid in Flight\");\r",
+							"});\r",
+							"\r",
+							"\r",
+							"pm.test(\"Check description text is empty\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData).to.have.property('description');\r",
+							"    pm.expect(jsonData.label).to.eql(\"\");\r",
+							"});\r",
+							"\r",
+							"\r",
+							"pm.test(\"Array 'sequences' has exactly 1 item\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.items).to.be.an('sequences');\r",
+							"    pm.expect(jsonData.items.length).to.eql(1);\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"let currentTimestamp = Math.floor(Date.now() / 1000);\r",
+							"pm.environment.set(\"currentTimestamp\", currentTimestamp);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/{{manifests}}/{{object}}/300000",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"{{manifests}}",
+						"{{object}}",
+						"300000"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetItem45214",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Check label text is correct\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData).to.have.property('label');\r",
+							"    pm.expect(jsonData.label).to.eql(\"[View of Saint Mary's Church in the distance, Treptow, Baltic Coast]\");\r",
+							"});\r",
+							"\r",
+							"\r",
+							"pm.test(\"@type field is present and correct\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData).to.have.property('@type');\r",
+							"    pm.expect(jsonData['@type']).to.eql(\"sc:Manifest\");\r",
+							"});\r",
+							"\r",
+							"\r",
+							"pm.test(\"@id field is present and correct\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData).to.have.property('@id');\r",
+							"    pm.expect(jsonData['@id']).to.eql(\"https://iiif.harvardartmuseums.org/manifests/object/45214\");\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"let currentTimestamp = Math.floor(Date.now() / 1000);\r",
+							"pm.environment.set(\"currentTimestamp\", currentTimestamp);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/{{manifests}}/{{object}}/45214",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"{{manifests}}",
+						"{{object}}",
+						"45214"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetItem178941",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Check label text is correct\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData).to.have.property('label');\r",
+							"    pm.expect(jsonData.label).to.eql(\"Graphic Primitives Plate 6\");\r",
+							"});\r",
+							"\r",
+							"\r",
+							"pm.test(\"@type field is present and correct\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData).to.have.property('@type');\r",
+							"    pm.expect(jsonData['@type']).to.eql(\"sc:Manifest\");\r",
+							"});\r",
+							"\r",
+							"\r",
+							"pm.test(\"@id field is present and correct\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData).to.have.property('@id');\r",
+							"    pm.expect(jsonData['@id']).to.eql(\"https://iiif.harvardartmuseums.org/manifests/object/178941\");\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"let currentTimestamp = Math.floor(Date.now() / 1000);\r",
+							"pm.environment.set(\"currentTimestamp\", currentTimestamp);\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/{{manifests}}/{{object}}/178941",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"{{manifests}}",
+						"{{object}}",
+						"178941"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
